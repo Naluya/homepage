@@ -1,0 +1,182 @@
+/* ALLGEMEINE EINSTELLUNGEN */
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2e4a3f; /* Dunkles Matchagrün */
+        background-color: #e3ede4; 
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b6d3370-c564-4b94-a9cb-80989f10cf33/dm8ntiy-d7d6a2d4-7bdc-4949-a254-f0d8cb420a52.jpg/v1/fill/w_1095,h_730,q_70,strp/hg_by_eraili_dm8ntiy-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6Ii9mLzRiNmQzMzcwLWM1NjQtNGI5NC1hOWNiLTgwOTg5ZjEwY2YzMy9kbThudGl5LWQ3ZDZhMmQ0LTdiZGMtNDk0OS1hMjU0LWYwZDhjYjQyMGE1Mi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RqPYOHOivTYcTcCGGS9K21tL9UIOjQ35ZAcgyGWyTqU');
+    background-attachment: fixed;
+    background-size: cover;
+    
+    display: flex;
+    min-height: 100vh;
+}
+
+/* SEITENLEISTE (NAVIGATION) */
+aside {
+    width: 250px;
+    background: rgba(255, 255, 255, 0.4); /* Fast durchsichtig */
+    backdrop-filter: blur(5px);
+    border-right: 2px solid #2e4a3f;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100vh;
+}
+
+aside h2 {
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    margin-bottom: 15px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    color: #2e4a3f;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+/* Hover-Effekt mit Orange/Gelb */
+aside ul li a:hover {
+    border: 1px solid #ff9f43;
+    background: rgba(255, 204, 0, 0.2);
+    color: #d35400;
+    border-radius: 5px;
+}
+
+/* HAUPTINHALTS-BEREICH */
+main {
+    margin-left: 250px; /* Platz für die Seitenleiste */
+    padding: 40px;
+    flex-grow: 1;
+}
+
+/* HALLO-SEITE LAYOUT */
+.hallo-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(46, 74, 63, 0.3);
+}
+
+.text-feld {
+    flex: 2;
+}
+
+.text-feld h1 {
+    margin-bottom: 20px;
+    color: #2e4a3f;
+    border-bottom: 2px solid #ffcc00; /* Gelbe Trennlinie */
+    padding-bottom: 10px;
+}
+
+.icon-feld {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-icon {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%; /* Macht es rund, für eckig einfach löschen */
+    border: 3px solid #2e4a3f;
+}
+
+/* PORTFOLIO MASONRY-GRID (Bilder passen sich flexibel an) */
+.portfolio-grid {
+    columns: 4 250px; /* 4 Spalten, mind. 250px breit */
+    column-gap: 15px;
+}
+
+.portfolio-item {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 8px;
+    border: 1px solid rgba(46, 74, 63, 0.2);
+    border-radius: 5px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+    border-color: #ff9f43;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 3px;
+}
+
+/* CONTACT SEITE */
+.contact-container {
+    background: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(46, 74, 63, 0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #2e4a3f;
+    padding: 10px 20px;
+    border: 1px solid #2e4a3f;
+    border-radius: 5px;
+    margin-right: 15px;
+    margin-top: 15px;
+    background: rgba(255,255,255,0.4);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: #ffcc00;
+    border-color: #ff9f43;
+}
+
+/* LIGHTBOX (Bilder-Vergrößerung beim Anklicken) */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+}
