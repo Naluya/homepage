@@ -1,0 +1,58 @@
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside>
+        <h2>Menü</h2>
+        <ul>
+            <li><a href="index.html">Hallo</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </aside>
+
+    <main>
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-item" onclick="openLightbox(this)">
+                <img src="bild1.jpg" alt="Bild 1" onerror="this.src='https://via.placeholder.com/400x300'">
+            </div>
+            
+            <div class="portfolio-item" onclick="openLightbox(this)">
+                <img src="bild2.jpg" alt="Bild 2 (Hochformat)" onerror="this.src='https://via.placeholder.com/300x500'">
+            </div>
+
+            <div class="portfolio-item" onclick="openLightbox(this)">
+                <img src="bild3.jpg" alt="Bild 3" onerror="this.src='https://via.placeholder.com/400x400'">
+            </div>
+
+            <div class="portfolio-item" onclick="openLightbox(this)">
+                <img src="bild4.jpg" alt="Bild 4" onerror="this.src='https://via.placeholder.com/500x300'">
+            </div>
+
+<div class="portfolio-item" onclick="openLightbox(this)">
+    <img src="NAME-DEINES-BILDES.jpg" alt="Beschreibung">
+</div>
+
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <img id="lightbox-img" src="" alt="Vergrößert">
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            var imgSrc = element.querySelector('img').src;
+            document.getElementById('lightbox-img').src = imgSrc;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+    </script>
+
+</body>
+</html>
