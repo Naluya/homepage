@@ -1,15 +1,20 @@
 /* ALLGEMEINE EINSTELLUNGEN */
-{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #2e4a3f; /* Dunkles Matchagrün */
-        background-color: #e3ede4; 
-    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4b6d3370-c564-4b94-a9cb-80989f10cf33/dm8ntiy-d7d6a2d4-7bdc-4949-a254-f0d8cb420a52.jpg/v1/fill/w_1095,h_730,q_70,strp/hg_by_eraili_dm8ntiy-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODU0IiwicGF0aCI6Ii9mLzRiNmQzMzcwLWM1NjQtNGI5NC1hOWNiLTgwOTg5ZjEwY2YzMy9kbThudGl5LWQ3ZDZhMmQ0LTdiZGMtNDk0OS1hMjU0LWYwZDhjYjQyMGE1Mi5qcGciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.RqPYOHOivTYcTcCGGS9K21tL9UIOjQ35ZAcgyGWyTqU');
+    /* Moderne, extrem dünne Schriften für einen stylischen Look */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 300; 
+    letter-spacing: 0.5px;
+    color: #e3ede4; /* Helle Schrift (Matcha-Weiß) auf dunklem Grund */
+    
+    /* HINTERGRUND: Dunkelgrau statt hell */
+    background-color: #1a1c1b; 
+    background-image: url('https://lh3.googleusercontent.com/d/1ZNjxdA6t92NpMlcCXz_2wWhUYuQosUh2');
     background-attachment: fixed;
     background-size: cover;
     
@@ -17,22 +22,31 @@ body {
     min-height: 100vh;
 }
 
-/* SEITENLEISTE (NAVIGATION) */
+/* Überschriften mit scharfen Linien und dünnerem Gewicht */
+h1, h2, h3 {
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+/* SEITENLEISTE (NAVIGATION) - Um 30% schmäler (von 250px auf 175px) */
 aside {
-    width: 250px;
-    background: rgba(255, 255, 255, 0.4); /* Fast durchsichtig */
-    backdrop-filter: blur(5px);
-    border-right: 2px solid #2e4a3f;
-    padding: 30px 20px;
+    width: 175px;
+    background: rgba(20, 22, 21, 0.7); /* Dunkles, fast durchsichtiges Grau */
+    backdrop-filter: blur(8px);
+    border-right: 1px solid #4a7c59; /* Scharfe, dünne matcha-grüne Linie */
+    padding: 30px 15px;
     position: fixed;
     height: 100vh;
+    z-index: 10;
 }
 
 aside h2 {
-    margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #68b0ab; /* Matcha-Akzent */
+    border-bottom: 1px solid rgba(104, 176, 171, 0.3);
+    padding-bottom: 5px;
 }
 
 aside ul {
@@ -40,43 +54,54 @@ aside ul {
 }
 
 aside ul li {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 aside ul li a {
     text-decoration: none;
-    color: #2e4a3f;
-    font-weight: bold;
+    color: #c2d7c5;
+    font-weight: 300;
+    font-size: 0.95rem;
     display: block;
-    padding: 10px;
+    padding: 8px 12px;
     border: 1px solid transparent;
     transition: all 0.3s ease;
 }
 
-/* Hover-Effekt mit Orange/Gelb */
+/* Dünner Rahmen-Effekt mit Orange/Gelb beim Drüberfahren */
 aside ul li a:hover {
     border: 1px solid #ff9f43;
-    background: rgba(255, 204, 0, 0.2);
-    color: #d35400;
-    border-radius: 5px;
+    background: rgba(255, 204, 0, 0.1);
+    color: #ffcc00;
 }
 
 /* HAUPTINHALTS-BEREICH */
 main {
-    margin-left: 250px; /* Platz für die Seitenleiste */
+    margin-left: 175px; /* Angepasst an schmalere Seitenleiste */
     padding: 40px;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-/* HALLO-SEITE LAYOUT */
-.hallo-container {
+/* ZENTRIERTE & SCHMÄLERE CONTAINER (FÜR HALLO & CONTACT) */
+.hallo-container, .contact-container {
     display: flex;
     gap: 40px;
-    align-items: flex-start;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(46, 74, 63, 0.3);
+    align-items: center;
+    justify-content: space-between;
+    
+    /* Schmäler und perfekt zentriert im Hauptbereich */
+    max-width: 750px; 
+    margin: 40px auto; 
+    width: 100%;
+
+    /* Dünklerer Hintergrund statt heller */
+    background: rgba(25, 28, 26, 0.85); 
+    padding: 40px;
+    border-radius: 6px;
+    border: 1px solid #4a7c59; /* Scharfe matcha-grüne Umrandung */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .text-feld {
@@ -85,9 +110,14 @@ main {
 
 .text-feld h1 {
     margin-bottom: 20px;
-    color: #2e4a3f;
-    border-bottom: 2px solid #ffcc00; /* Gelbe Trennlinie */
+    color: #68b0ab; /* Matcha-Grün */
+    border-bottom: 1px solid #ffcc00; /* Scharfe gelbe Trennlinie */
     padding-bottom: 10px;
+}
+
+.text-feld p {
+    line-height: 1.6;
+    color: #cbd5cd;
 }
 
 .icon-feld {
@@ -97,79 +127,111 @@ main {
 }
 
 .profil-icon {
-    width: 150px;
-    height: 150px;
+    width: 130px;
+    height: 130px;
     object-fit: cover;
-    border-radius: 50%; /* Macht es rund, für eckig einfach löschen */
-    border: 3px solid #2e4a3f;
+    border-radius: 50%;
+    border: 1px solid #68b0ab; /* Dünne scharfe Linie */
 }
 
-/* PORTFOLIO MASONRY-GRID (Bilder passen sich flexibel an) */
+/* PORTFOLIO SEITE (Spezial-Effekt mit Verlauf nach unten) */
+.portfolio-body {
+    /* WICHTIG: Der lineare Verlauf liegt HIER über dem Hintergrundbild aus dem body */
+    background-image: 
+        linear-gradient(
+            to bottom, 
+            rgba(26, 28, 27, 0.95) 0%,    /* Oben: 95% dunkel (Bild schimmert nur 5% durch) */
+            rgba(26, 28, 27, 0.75) 50%,    /* Mitte: Sanfter Übergang */
+            rgba(26, 28, 27, 0.3) 100%    /* Unten: Nur 10% dunkel (Bild ist zu 90% sichtbar) */
+        ),
+        url('https://lh3.googleusercontent.com/d/1ZNjxdA6t92NpMlcCXz_2wWhUYuQosUh2'); /* Das identische Hintergrundbild */
+    
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #1a1c1b; 
+}
+
+/* PORTFOLIO GRID */
 .portfolio-grid {
-    columns: 4 250px; /* 4 Spalten, mind. 250px breit */
-    column-gap: 15px;
+    display: flex;
+    flex-wrap: wrap;        
+    gap: 15px;              
+    max-width: 100%;
+    width: 100%;
+    margin: 20px 0;
+    padding-right: 15px;    
 }
 
+/* PORTFOLIO ITEMS */
 .portfolio-item {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.6);
-    padding: 8px;
-    border: 1px solid rgba(46, 74, 63, 0.2);
-    border-radius: 5px;
-    transition: transform 0.2s;
+    flex: 1 1 220px;       
+    max-width: 100%; 
+    min-width: 180px;            
+    height: 220px;              /* Feste Basishöhe, an der sich alles orientiert */
+    
+    background: rgba(25, 28, 26, 0.9); 
+    padding: 6px;
+    border: 1px solid rgba(104, 176, 171, 0.3); 
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
+    overflow: hidden;
 }
 
 .portfolio-item:hover {
-    transform: scale(1.02);
+    transform: translateY(-3px); 
     border-color: #ff9f43;
 }
 
+/* BILDER-ANPASSUNG (Zurück zu Cover für den perfekten Ausschnitt) */
 .portfolio-item img {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 3px;
+    height: 100%;
+    object-fit: cover;          /* Zentrierter, sauberer Zuschnitt */
+    border-radius: 2px;
 }
 
-/* CONTACT SEITE */
-.contact-container {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(46, 74, 63, 0.3);
-    display: flex;
-    justify-content: space-between;
-}
-
+/* CONTACT SEITE ERGÄNZUNGEN */
 .social-links a {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: #2e4a3f;
-    padding: 10px 20px;
-    border: 1px solid #2e4a3f;
-    border-radius: 5px;
-    margin-right: 15px;
+    color: #c2d7c5;
+    padding: 8px 16px;
+    border: 1px solid #4a7c59;
+    border-radius: 4px;
+    margin-right: 12px;
     margin-top: 15px;
-    background: rgba(255,255,255,0.4);
+    font-size: 0.9rem;
+    background: rgba(20, 22, 21, 0.5);
     transition: all 0.3s;
 }
 
 .social-links a:hover {
-    background: #ffcc00;
+    background: rgba(255, 159, 67, 0.2);
     border-color: #ff9f43;
+    color: #ffcc00;
 }
 
-/* LIGHTBOX (Bilder-Vergrößerung beim Anklicken) */
+hr.trennlinie {
+    border: none;
+    border-top: 1px solid #ffcc00; /* Selbe scharfe gelbe/orange Trennlinie */
+    margin: 20px 0;                /* Abstand nach oben und unten */
+    opacity: 1;                    /* Sorgt dafür, dass die Linie voll sichtbar ist */
+}
+
+.small-text {
+    font-size: 0.75rem; /* Standard text is usually 1rem, so 0.85rem is slightly smaller */
+    color: #cbd5cd;     /* Keeps your nice matcha-white text color */
+}
+
+/* LIGHTBOX (Bilder-Vergrößerung) */
 .lightbox {
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(10, 11, 10, 0.95); /* Extrem dunkles Schwarz-Grau */
     z-index: 1000;
     justify-content: center;
     align-items: center;
