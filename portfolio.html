@@ -18,11 +18,7 @@
 
 <main>
     <div class="portfolio-grid">
-        
-        <div class="portfolio-item" onclick="openLightbox(this)">
-            <img src="bild1.jpg" data-thumb="bild1-auschnitt.jpg" alt="Bild 1" onerror="this.src='https://via.placeholder.com/400x300'">
-        </div>
-        
+
         <div class="portfolio-item" onclick="openLightbox(this)">
             <img src="Helixel (1).png" alt="Beschreibung">
         </div>
@@ -33,6 +29,11 @@
 
         <div class="portfolio-item" onclick="openLightbox(this)">
             <img src="chib yu-protected-intensity-LOW-V2.png" alt="Beschreibung">
+        </div>
+
+                
+        <div class="portfolio-item" onclick="openLightbox(this)">
+            <img src="bild1.jpg" data-thumb="bild1-auschnitt.jpg" alt="Bild 1" onerror="this.src='https://via.placeholder.com/400x300'">
         </div>
 
     </div>
@@ -49,7 +50,6 @@
     </div>
 
    <script>
-    // Öffnet die Lightbox IMMER mit dem echten Originalbild (src)
     function openLightbox(element) {
         var imgElement = element.querySelector('img');
         var imgSrc = imgElement.src; 
@@ -57,31 +57,27 @@
         document.getElementById('lightbox').style.display = 'flex';
     }
 
-    // Steuert die eigenen Vorschaubilder und berechnet die flexiblen Breiten für Querformate
     window.addEventListener('DOMContentLoaded', () => {
         const items = document.querySelectorAll('.portfolio-item');
         
         items.forEach(item => {
             const img = item.querySelector('img');
             
-            // 1. Prüfen, ob ein eigenes Vorschaubild (data-thumb) hinterlegt ist
             const customThumb = img.getAttribute('data-thumb');
-            const originalSrc = img.src; // Speichert das echte Bild für die Lightbox
+            const originalSrc = img.src; 
             
             if (customThumb) {
-                img.src = customThumb; // Tauscht die Vorschau aus
+                img.src = customThumb; 
             }
 
-            // 2. Berechnen des Seitenverhältnisses für die flexible Breite
             const tempImg = new Image();
             tempImg.src = originalSrc;
             tempImg.onload = function() {
                 const ratio = tempImg.width / tempImg.height;
                 
                 if (ratio > 1) {
-                    // Wenn Querformat: Erhöhe die Breite proportional zwischen 100% und 120%
                     let extraWidth = 1 + (ratio - 1) * 0.1; 
-                    if (extraWidth > 1.2) extraWidth = 1.2; // Deckelung bei maximal 120%
+                    if (extraWidth > 1.2) extraWidth = 1.2; 
                     
                     item.style.flexGrow = extraWidth;
                     item.style.flexBasis = `calc(${220 * extraWidth}px)`;
