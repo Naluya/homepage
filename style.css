@@ -1,4 +1,3 @@
-/* ALLGEMEINE EINSTELLUNGEN */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,13 +5,11 @@
 }
 
 body {
-    /* Moderne, extrem dünne Schriften für einen stylischen Look */
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-weight: 300; 
     letter-spacing: 0.5px;
-    color: #e3ede4; /* Helle Schrift (Matcha-Weiß) auf dunklem Grund */
+    color: #e3ede4; 
     
-    /* HINTERGRUND: Dunkelgrau statt hell */
     background-color: #1a1c1b; 
     background-image: url('https://lh3.googleusercontent.com/d/1ZNjxdA6t92NpMlcCXz_2wWhUYuQosUh2');
     background-attachment: fixed;
@@ -22,18 +19,18 @@ body {
     min-height: 100vh;
 }
 
-/* Überschriften mit scharfen Linien und dünnerem Gewicht */
+
 h1, h2, h3 {
     font-weight: 400;
     letter-spacing: 1.5px;
 }
 
-/* SEITENLEISTE (NAVIGATION) - Um 30% schmäler (von 250px auf 175px) */
+
 aside {
     width: 175px;
-    background: rgba(20, 22, 21, 0.7); /* Dunkles, fast durchsichtiges Grau */
+    background: rgba(20, 22, 21, 0.7); 
     backdrop-filter: blur(8px);
-    border-right: 1px solid #4a7c59; /* Scharfe, dünne matcha-grüne Linie */
+    border-right: 1px solid #4a7c59; 
     padding: 30px 15px;
     position: fixed;
     height: 100vh;
@@ -44,7 +41,7 @@ aside h2 {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin-bottom: 30px;
-    color: #68b0ab; /* Matcha-Akzent */
+    color: #68b0ab; 
     border-bottom: 1px solid rgba(104, 176, 171, 0.3);
     padding-bottom: 5px;
 }
@@ -68,39 +65,38 @@ aside ul li a {
     transition: all 0.3s ease;
 }
 
-/* Dünner Rahmen-Effekt mit Orange/Gelb beim Drüberfahren */
+
 aside ul li a:hover {
     border: 1px solid #ff9f43;
     background: rgba(255, 204, 0, 0.1);
     color: #ffcc00;
 }
 
-/* HAUPTINHALTS-BEREICH */
 main {
-    margin-left: 175px; /* Angepasst an schmalere Seitenleiste */
+    margin-left: 175px; 
     padding: 40px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* ZENTRIERTE & SCHMÄLERE CONTAINER (FÜR HALLO & CONTACT) */
+
 .hallo-container, .contact-container {
     display: flex;
     gap: 40px;
     align-items: center;
     justify-content: space-between;
     
-    /* Schmäler und perfekt zentriert im Hauptbereich */
+    
     max-width: 750px; 
     margin: 40px auto; 
     width: 100%;
 
-    /* Dünklerer Hintergrund statt heller */
+    
     background: rgba(25, 28, 26, 0.85); 
     padding: 40px;
     border-radius: 6px;
-    border: 1px solid #4a7c59; /* Scharfe matcha-grüne Umrandung */
+    border: 1px solid #4a7c59; 
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
@@ -110,8 +106,8 @@ main {
 
 .text-feld h1 {
     margin-bottom: 20px;
-    color: #68b0ab; /* Matcha-Grün */
-    border-bottom: 1px solid #ffcc00; /* Scharfe gelbe Trennlinie */
+    color: #68b0ab; 
+    border-bottom: 1px solid #ffcc00; 
     padding-bottom: 10px;
 }
 
@@ -131,27 +127,27 @@ main {
     height: 130px;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid #68b0ab; /* Dünne scharfe Linie */
+    border: 1px solid #68b0ab; 
 }
 
-/* PORTFOLIO SEITE (Spezial-Effekt mit Verlauf nach unten) */
+
 .portfolio-body {
-    /* WICHTIG: Der lineare Verlauf liegt HIER über dem Hintergrundbild aus dem body */
+   
     background-image: 
         linear-gradient(
             to bottom, 
-            rgba(26, 28, 27, 0.95) 0%,    /* Oben: 95% dunkel (Bild schimmert nur 5% durch) */
-            rgba(26, 28, 27, 0.75) 50%,    /* Mitte: Sanfter Übergang */
-            rgba(26, 28, 27, 0.3) 100%    /* Unten: Nur 10% dunkel (Bild ist zu 90% sichtbar) */
+            rgba(26, 28, 27, 0.95) 0%,   
+            rgba(26, 28, 27, 0.75) 50%,   
+            rgba(26, 28, 27, 0.3) 100%    
         ),
-        url('https://lh3.googleusercontent.com/d/1ZNjxdA6t92NpMlcCXz_2wWhUYuQosUh2'); /* Das identische Hintergrundbild */
+        url('https://lh3.googleusercontent.com/d/1ZNjxdA6t92NpMlcCXz_2wWhUYuQosUh2'); 
     
     background-attachment: fixed;
     background-size: cover;
     background-color: #1a1c1b; 
 }
 
-/* PORTFOLIO GRID */
+
 .portfolio-grid {
     display: flex;
     flex-wrap: wrap;        
@@ -162,12 +158,11 @@ main {
     padding-right: 15px;    
 }
 
-/* PORTFOLIO ITEMS */
 .portfolio-item {
     flex: 1 1 220px;       
     max-width: 100%; 
     min-width: 180px;            
-    height: 220px;              /* Feste Basishöhe, an der sich alles orientiert */
+    height: 220px;              
     
     background: rgba(25, 28, 26, 0.9); 
     padding: 6px;
@@ -183,15 +178,13 @@ main {
     border-color: #ff9f43;
 }
 
-/* BILDER-ANPASSUNG (Zurück zu Cover für den perfekten Ausschnitt) */
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* Zentrierter, sauberer Zuschnitt */
+    object-fit: cover;          
     border-radius: 2px;
 }
 
-/* CONTACT SEITE ERGÄNZUNGEN */
 .social-links a {
     display: inline-flex;
     align-items: center;
@@ -216,22 +209,21 @@ main {
 
 hr.trennlinie {
     border: none;
-    border-top: 1px solid #ffcc00; /* Selbe scharfe gelbe/orange Trennlinie */
-    margin: 20px 0;                /* Abstand nach oben und unten */
-    opacity: 1;                    /* Sorgt dafür, dass die Linie voll sichtbar ist */
+    border-top: 1px solid #ffcc00; 
+    margin: 20px 0;                
+    opacity: 1;                    
 }
 
 .small-text {
-    font-size: 0.75rem; /* Standard text is usually 1rem, so 0.85rem is slightly smaller */
-    color: #cbd5cd;     /* Keeps your nice matcha-white text color */
+    font-size: 0.75rem; 
+    color: #cbd5cd;     
 }
 
-/* LIGHTBOX (Bilder-Vergrößerung) */
 .lightbox {
     display: none;
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(10, 11, 10, 0.95); /* Extrem dunkles Schwarz-Grau */
+    background: rgba(10, 11, 10, 0.95); 
     z-index: 1000;
     justify-content: center;
     align-items: center;
